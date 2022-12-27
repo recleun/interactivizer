@@ -1,33 +1,31 @@
-import { createInterface } from 'readline'
+import promptSync from 'prompt-sync';
+const prompt = promptSync();
 
-class Questions {
+export class Questions {
 
-    constructor() {
-        this.answers = []
-        this.readline = createInterface({
-            input: process.stdin,
-            output: process.stdout,
-        })
+    constructor(questions=undefined) {
+        this.result = [];
+        if (questions != undefined && typeof questions == "array") {
+            for (let [key, question] of Object.entries(questions)) {
+                this.addQuestion(question);
+            }
+        } else if (questions != undefined && typeof questions != "array") {
+            throw new Error("Questions passed are not of type array");
+        }
     }
 
-    askQuestion(options) {
-
-        /**
-         * @param {object} options - contains question type, question, callback funtion and (answers: optional)
-         */
-
-        if(options.type === 'input')
-            this.add_Question_Input(options.question, options.callback)
+    addQuestion(question) {
+        if (typeof question != "string") throw new Error("Question not a string");
+        const entry = { question: question, answer: undefined }
+        this.result.push(entry);
+        return this;
     }
 
-    add_Question_Input(ques, callback) {
-        this.readline.question(ques, answer => {
-            this.answers.push(answer)
-            callback()
-        })
+    async ask() {
+        if (this.result.length == 0) throw new Error("No questions to ask");
+        for (let [key, entry] of Object.entries(this.result)) {
+            entry.answer = prompt(`${entry.question} >> `);
+        }
+        return this.result;
     }
-
 }
-
-
-export default Questions;
