@@ -1,5 +1,13 @@
-import CLI from './src/cli-interactions.js'
+import { Colors, Questions } from "./src/cli-interactions.js";
 
-const CLI_Obj = new CLI('Hello World', {})
+const q1 = new Questions()
 
-CLI_Obj.display(CLI_Obj.TerminalName, {})
+q1.askQuestion({
+    type: 'input',
+    question: Colors.bgBlue.bold('Whats your name? '),
+    callback: () => {
+        console.log(q1.answers[0]) 
+    },
+})
+
+

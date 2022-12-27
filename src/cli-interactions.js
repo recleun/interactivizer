@@ -1,17 +1,5 @@
+import Colors from "./Colors.js";
+import Questions from "./Questions.js";
 
 
-class CLI {
-
-	constructor(terminalName, options)
-	{
-		this.TerminalName = terminalName;
-		this.options = options;
-	}
-
-	display(str, options) {
-		process.stdout.write(str)
-	}
-
-}
-
-export default CLI;
+export { Colors, Questions }
