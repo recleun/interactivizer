@@ -1,3 +1,4 @@
-import { test } from './src/example.js';
+import { Colors } from "./src/colors.js";
+import { Questions } from "./src/questions.js";
 
-test();
+export { Colors, Questions }
