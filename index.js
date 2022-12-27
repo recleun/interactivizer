@@ -1,13 +1,5 @@
-import { Colors, Questions } from "./src/cli-interactions.js";
 
-const q1 = new Questions()
+import { Colors } from "./src/colors.js";
+import { Questions } from "./src/questions.js";
 
-q1.askQuestion({
-    type: 'input',
-    question: Colors.bgBlue.bold('Whats your name? '),
-    callback: () => {
-        console.log(q1.answers[0]) 
-    },
-})
-
-
+export { Colors, Questions }
