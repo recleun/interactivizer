@@ -1,3 +1,5 @@
-import { test } from './src/example.js';
+import CLI from './src/cli-interactions.js'
 
-test();
+const CLI_Obj = new CLI('Hello World', {})
+
+CLI_Obj.display(CLI_Obj.TerminalName, {})
