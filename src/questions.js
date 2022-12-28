@@ -14,11 +14,11 @@ export class Questions {
 
     constructor(questions=undefined) {
         this.result = [];
-        if (questions != undefined && typeof questions == "array") {
+        if (questions != undefined && Array.isArray(questions) === true) {
             for (let [key, question] of Object.entries(questions)) {
                 this.addQuestion(question);
             }
-        } else if (questions != undefined && typeof questions != "array") {
+        } else if (questions != undefined && Array.isArray(questions) === false) {
             throw new Error("Questions passed are not of type array");
         }
     }
