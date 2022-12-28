@@ -4,6 +4,7 @@
   "version": "0.1.0",
   "description": "A package that helps developers with making interactive command line interfaces.",
   "main": "index.js",
+  "files": ["src/*", "tests/*"],
   "scripts": {
     "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js"
   },
