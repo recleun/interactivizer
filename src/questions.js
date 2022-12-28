@@ -1,24 +1,24 @@
 import promptSync from 'prompt-sync';
 const prompt = promptSync();
 
-/**
- * A class containing questions to be asked later.
- * @param questions - (optional) Adds a list of questions without
- * the need to use `Questions.addQuestions()`
- * @example
- * ```js
- * const myQuestions = new Questions(["First question?", "Second question?"]);
- * ```
-*/
 export class Questions {
 
+    /**
+     * A class containing questions to be asked later.
+     * @param questions - (optional) Adds a list of questions without
+     * the need to use `Questions.addQuestions()`
+     * @example
+     * ```js
+     * const myQuestions = new Questions(["First question?", "Second question?"]);
+     * ```
+    */
     constructor(questions=undefined) {
         this.result = [];
-        if (questions != undefined && Array.isArray(questions) === true) {
+        if (Array.isArray(questions) == true) {
             for (let [key, question] of Object.entries(questions)) {
                 this.addQuestion(question);
             }
-        } else if (questions != undefined && Array.isArray(questions) === false) {
+        } else if (questions != undefined) {
             throw new Error("Questions passed are not of type array");
         }
     }
