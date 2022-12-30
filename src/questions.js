@@ -5,20 +5,21 @@ export class Questions {
 
     /**
      * A class containing questions to be asked later.
-     * @param questions - (optional) Adds a list of questions without
+     * @param options - (optional) Some options you can use
+     * @option questions - An array containing questions to be added
      * the need to use `Questions.addQuestions()`
      * @example
      * ```js
-     * const myQuestions = new Questions(["First question?", "Second question?"]);
+     * const myQuestions = new Questions({questions: ["First question?", "Second question?"]});
      * ```
     */
-    constructor(questions=undefined) {
+    constructor(options={questions: []}) {
         this.result = [];
-        if (Array.isArray(questions) == true) {
-            for (let [key, question] of Object.entries(questions)) {
+        if (Array.isArray(options.questions) == true) {
+            for (let [key, question] of Object.entries(options.questions)) {
                 this.addQuestion(question);
             }
-        } else if (questions != undefined) {
+        } else if (options.questions != undefined) {
             throw new Error("Questions passed are not of type array");
         }
     }

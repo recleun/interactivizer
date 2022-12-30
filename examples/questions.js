@@ -1,7 +1,7 @@
 import { Questions } from "interactivizer";
 
 // Create a questions class
-const questions = new Questions(["First question?", "Second question?"]);
+const questions = new Questions({questions: ["First question?", "Second question?"]});
 
 // Or create an empty question and add them later
 const questions2 = new Questions();
