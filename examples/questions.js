@@ -1,4 +1,4 @@
-import { Questions, ask } from "interactivizer";
+import { Questions, ask } from "../index.js";
 
 // Create a questions class
 const questions = new Questions({questions: ["First question?", "Second question?"]});

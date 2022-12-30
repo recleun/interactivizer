@@ -1,4 +1,4 @@
-import { Colors } from "cli-interactions";
+import { Colors } from "../index.js";
 
 // Colors is basically chalk.
 // Their repository: https://github.com/chalk/chalk
