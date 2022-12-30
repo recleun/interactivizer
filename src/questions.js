@@ -1,6 +1,23 @@
 import promptSync from 'prompt-sync';
 const prompt = promptSync();
 
+/**
+ * Ask one question
+ * @param question - The question to ask
+ * @param separator - The separator between question and answer
+ * @example
+ * ```js
+ * const answer = ask("Some question", " >> ");
+ * ```
+ */
+export function ask(question, separator=undefined) {
+    if (typeof question != "string" && question != undefined)
+        throw new Error("Question is not of type string");
+    if (typeof separator != "string" && separator != undefined)
+        throw new Error("Separator is not of type string");
+    return prompt(question.concat(separator ? separator : " "));
+}
+
 export class Questions {
 
     /**
