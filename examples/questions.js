@@ -1,4 +1,4 @@
-import { Questions } from "interactivizer";
+import { Questions, ask } from "interactivizer";
 
 // Create a questions class
 const questions = new Questions({questions: ["First question?", "Second question?"]});
@@ -17,3 +17,6 @@ questions2.addQuestion("First question?").addQuestion("Second question?");
 //   } 
 // ]
 const answers = await questions.ask();
+
+// Ask a single question
+ask("Some question?");
