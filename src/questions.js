@@ -77,6 +77,14 @@ QuestionSet: class {
     }
 
     /**
+     * Clears out questions from a `QuestionSet`
+     */
+    clearQuestions() {
+        this.result = [];
+        return this;
+    }
+
+    /**
      * @returns `Object`
      * @example
      * ```js
