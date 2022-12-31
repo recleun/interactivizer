@@ -1,6 +1,8 @@
 import promptSync from 'prompt-sync';
 const prompt = promptSync();
 
+const Questions = {
+
 /**
  * Ask one question
  * @param question - The question to ask
@@ -10,15 +12,15 @@ const prompt = promptSync();
  * const answer = ask("Some question", " >> ");
  * ```
  */
-export async function ask(question, separator=undefined) {
+async ask(question, separator=undefined) {
     if (typeof question != "string" && question != undefined)
         throw new Error("Question is not of type string");
     if (typeof separator != "string" && separator != undefined)
         throw new Error("Separator is not of type string");
     return prompt(question.concat(separator ? separator : " "));
-}
+},
 
-export class Questions {
+QuestionSet: class {
 
     /**
      * A class containing questions to be asked later.
@@ -96,3 +98,6 @@ export class Questions {
         return this.result;
     }
 }
+}
+
+export default Questions;
