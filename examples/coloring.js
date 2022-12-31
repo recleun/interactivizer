@@ -10,4 +10,4 @@ console.log(Colors.blue("This is blue text."));
 
 // Print out text with different backgrounds
 console.log(Colors.bgGrey("This is default text on grey background"));
-console.log(Colors.bgWhite.bgBlack("This is black text on white background"));
+console.log(Colors.black.bgWhite("This is black text on white background"));
