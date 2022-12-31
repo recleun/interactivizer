@@ -1,4 +1,4 @@
 import { Colors } from "./src/colors.js";
-import { Questions, ask } from "./src/questions.js";
+import Questions from "./src/questions.js";
 
-export { Colors, Questions, ask }
+export { Colors, Questions }
