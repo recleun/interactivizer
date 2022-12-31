@@ -10,7 +10,7 @@ const prompt = promptSync();
  * const answer = ask("Some question", " >> ");
  * ```
  */
-export function ask(question, separator=undefined) {
+export async function ask(question, separator=undefined) {
     if (typeof question != "string" && question != undefined)
         throw new Error("Question is not of type string");
     if (typeof separator != "string" && separator != undefined)
