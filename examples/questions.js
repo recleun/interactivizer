@@ -1,10 +1,10 @@
-import { Questions, ask } from "../index.js";
+import { Questions } from "../index.js";
 
 // Create a questions class
-const questions = new Questions({questions: ["First question?", "Second question?"]});
+const questions = new Questions.QuestionSet({questions: ["First question?", "Second question?"]});
 
 // Or create an empty question and add them later
-const questions2 = new Questions();
+const questions2 = new Questions.QuestionSet();
 
 questions2.addQuestion("First question?").addQuestion("Second question?");
 
@@ -19,4 +19,4 @@ questions2.addQuestion("First question?").addQuestion("Second question?");
 const answers = await questions.ask();
 
 // Ask a single question
-const answer = await ask("Some question?");
+const answer = await Questions.ask("Some question?");
