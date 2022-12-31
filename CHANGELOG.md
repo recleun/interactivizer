@@ -28,3 +28,18 @@ Added some more functionality, and some minor changes.
 ### Changed
 - `Questions` constructor parameters are changed to options.
 - Logic handling parameters for `Questions`
+
+## v0.1.3 - (2022-12-31)
+
+Changed how `Questions` work, and added some extra functions, as well as updating JSDoc tags.
+
+### Added
+- `QuestionSet.clearQuestions()` to clear questions in a QuestionSet.
+
+### Changed
+- `Questions` constructor is now named `QuestionSet`.
+- `Questions` is now an object containing methods and classes.
+- JSDoc tags have been updated.
+
+### Fixed
+- Incorrect colors in `examples/coloring.js`.
