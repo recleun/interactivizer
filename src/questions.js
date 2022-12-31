@@ -1,15 +1,19 @@
 import promptSync from 'prompt-sync';
 const prompt = promptSync();
 
+/**
+ * @exports
+ * An object containing useful methods and classes that help with getting input from a user.
+ */
 const Questions = {
 
 /**
- * Ask one question
+ * Ask one question.
  * @param question - The question to ask
  * @param separator - The separator between question and answer
  * @example
  * ```js
- * const answer = ask("Some question", " >> ");
+ * const answer = Questions.ask("Some question", " >> ");
  * ```
  */
 async ask(question, separator=undefined) {
@@ -20,17 +24,24 @@ async ask(question, separator=undefined) {
     return prompt(question.concat(separator ? separator : " "));
 },
 
+/**
+ * Class that contains a set of questions that can be asked later.
+ */
 QuestionSet: class {
 
     /**
-     * A class containing questions to be asked later.
-     * @param options - (optional) Some options you can use
-     * @option `questions` - An array containing questions to be added
-     * @option `separator` - A string to be put between question and answer
-     * the need to use `Questions.addQuestions()`
+     * @constructor
+     * A QuestionSet instance containing questions to be asked later.
+     * @param options - Some options you can use
+     * @option
+     * `questions` - An array containing questions to be added
+     * @option
+     * `separator` - A string to be put between question and answer
      * @example
      * ```js
-     * const myQuestions = new Questions({questions: ["First question?", "Second question?"]});
+     * const myQuestions = new Questions.QuestionSet({
+     *     questions: ["First question?", "Second question?"]
+     * });
      * ```
     */
     constructor(options={questions: [], separator: " "}) {
@@ -60,11 +71,12 @@ QuestionSet: class {
     }
 
     /**
+     * Adds questions to a `QuestionSet`.
      * @param question - The question to add
      * @example
      * Creates a questions instance with 2 questions
      * ```js
-     * const myQuestions = new Questions()
+     * const myQuestions = new Questions.QuestionSet()
      *     .addQuestion("The first question?")
      *     .addQuestion("The second question?");
      * ```
@@ -77,7 +89,7 @@ QuestionSet: class {
     }
 
     /**
-     * Clears out questions from a `QuestionSet`
+     * Clears out questions from a `QuestionSet`.
      */
     clearQuestions() {
         this.result = [];
@@ -93,7 +105,8 @@ QuestionSet: class {
      * // Returns array containing each question and its answer
      * [
      *   {
-     *      question: answer
+     *      question: string,
+     *      answer: string
      *   }
      * ]
      * ```
