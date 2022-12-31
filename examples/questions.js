@@ -1,14 +1,17 @@
 import { Questions } from "../index.js";
 
-// Create a questions class
+// Create a question set
 const questions = new Questions.QuestionSet({questions: ["First question?", "Second question?"]});
 
-// Or create an empty question and add them later
+// Or create an empty question set and add them later
 const questions2 = new Questions.QuestionSet();
 
 questions2.addQuestion("First question?").addQuestion("Second question?");
 
-// Ask the questions (Will show questions by order and get input)
+// Clear the questions
+questions2.clearQuestions();
+
+// Ask the questions in the question set (Will show questions by order and get input)
 // Will return an object in an array with each question and its answer:
 // [
 //   { 
