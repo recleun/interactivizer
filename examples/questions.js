@@ -19,4 +19,4 @@ questions2.addQuestion("First question?").addQuestion("Second question?");
 const answers = await questions.ask();
 
 // Ask a single question
-ask("Some question?");
+const answer = await ask("Some question?");
